@@ -1,0 +1,99 @@
+{
+  "day": "2026-09-08",
+  "title": "Smarter models, defensive bets and the scraper bill",
+  "overview": "New model integrations reach everyday tools, while abusive crawlers impose costs on the Linux kernel’s Git hosting. We examine the case for faster training as defence, plus arguments about planning, incentives and what extra thinking time can buy.",
+  "duration_s": 341,
+  "chars": 4738,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-08.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-08.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Tuesday the eighth of September, twenty twenty-six. five twenty-two PM is brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Email us at hello at lab five twenty-two dot co dot uk if you think we can help your business. [pause]",
+    "[serious] The Linux kernel’s Git hosting is spending processor time rendering commits for abusive scrapers. Konstantin Ryabitsev describes the crawler traffic hitting git dot kernel dot org as background radiation, in a piece highlighted by Simon Willison. That’s the less glamorous side of making everything machine-readable: somebody still pays to serve it. [short pause] We don’t have a breakdown identifying the crawlers, so don’t pin every request on model training. But if you host public code, machine traffic belongs in your capacity planning, not just your visitor statistics.",
+    "[curious] On the useful side of machines fetching and making things, Willison’s L-L-M tool has reached version zero point thirty-five, adding support for OpenAI’s G-P-T six Astra. The concrete change is access through that tool—not evidence of a capability leap. There are no prices or comparative results here to justify moving your production workload.",
+    "And there’s a small example of what people are doing with it: Willison used Astra at its medium setting in ChatGPT Work to build an animated transition between Mercator and Equal Earth map projections with D three. Separately, he used Claude Fable five point one in Claude Code for web to build a video compressor using a WebAssembly build of F-F-mpeg. [cheerful] Useful little jobs, with outputs you can inspect. Neither is a benchmark, but both are better demonstrations than another chatbot declaring itself helpful.",
+    "[short pause] That question of inspectable output matters in editing, too. Adobe is overhauling how editors interact with its generators in Premiere, aiming to make them easier to use. Specific controls, costs and limitations aren’t established here, so there’s not yet enough to call it a workflow improvement. My test would be whether you get a usable edit with fewer retries—not whether the button looks friendlier.",
+    "[curious] From guiding a generator to planning beyond the next step: Danijar Hafner is building a stealth startup around agents that can plan for the unexpected, according to M-I-T Technology Review. An interesting target, but not a demonstrated result. What I’d want to see is performance when the environment changes after the plan is made. Planning ahead is easy to promise; recovering from a bad assumption is the useful bit.",
+    "[serious] Which brings us to planning for other people’s models. Jakub Pachocki argues that the strongest reason to train much smarter models quickly is to build defences against dangers from other A-I. The strongest version is that defenders need capabilities they can’t obtain by standing still. The objection is equally direct: speeding up can strengthen the threats as well. I’d want evidence that defensive gains arrive first and reach the people who need them.",
+    "[short pause] A related LessWrong post, “The Scramble”, frames frontier pacing through a hypothetical emergency White House meeting with A-I chief executives and national security advisers. Hypothetical, not a meeting that happened. My question for that scenario is what agreement could actually be verified, rather than merely announced.",
+    "[long pause] That’s the news. No research papers to weigh tonight, but there are several arguments worth separating from results. On LessWrong, “The Magnus Challenge” gives a fifteen-hundred-rated chess player a year on the clock against Magnus Carlsen’s one minute, with a billion dollars at stake. [curious] It’s a sharp way to ask what extra thinking time buys against a much stronger opponent. My objection to carrying it straight across to models: more time only helps if the thinking process can turn it into better decisions.",
+    "[serious] One final LessWrong item credits Opus four point six with suggesting glycine, followed by six months of reportedly better sleep and greater tolerance for sleep deprivation. That’s one person’s experience, not controlled evidence or a recommendation. A model can suggest a hypothesis; it can’t supply the missing comparison.",
+    "[confident] I’d try the small tools where you can inspect the result, and demand comparative evidence before treating model access as model progress. Keep an eye on whether the defensive case for faster training produces measurable defences. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "9df07af4-c9ee-477c-8339-a1157f700fd7",
+        "url": "https://www.theverge.com/tech/991133/adobe-is-trying-to-make-its-ai-generators-idiot-proof-in-premiere",
+        "title": "Adobe is trying to make its AI generators idiot-proof in Premiere",
+        "source": "The Verge AI"
+      },
+      {
+        "id": "0acf43fd-b146-4a49-9fff-1a20d094de99",
+        "url": "https://www.technologyreview.com/2026/09/08/1142088/danijar-hafner-developing-plan-ahead-agents/",
+        "title": "This AI entrepreneur is developing agents that can plan ahead for the unexpected",
+        "source": "MIT Technology Review AI"
+      },
+      {
+        "id": "ced58068-3966-44fb-9330-f0704ff7ef75",
+        "url": "https://www.lesswrong.com/posts/zmC5Nhx36wt47WHfu/machine-organizations",
+        "title": "Machine Organizations",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "a1c762c8-8084-471f-90ca-1f99662dfe4a",
+        "url": "https://www.lesswrong.com/posts/M9EuHPg8vBapFEDe9/the-wormtongue-test",
+        "title": "The Wormtongue Test",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "7170d67e-99df-431e-881c-1925563fc254",
+        "url": "https://www.lesswrong.com/posts/ZxC23QApzYPgcYXpz/the-magnus-challenge",
+        "title": "The Magnus Challenge",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "21b7901b-ce12-4f2b-83f2-16d7d3ec9b9f",
+        "url": "https://www.lesswrong.com/posts/S7e7swkWDyKdtvRqM/the-scramble-getting-in-position-to-pace-the-frontier",
+        "title": "The Scramble: getting in position to pace the frontier",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "8b945e29-06ff-48e0-9341-d38f9c317440",
+        "url": "https://simonwillison.net/2026/Sep/7/llm/",
+        "title": "llm 0.35",
+        "source": "Simon Willison"
+      },
+      {
+        "id": "62737613-2d04-4249-a714-9f3ca918804b",
+        "url": "https://simonwillison.net/2026/Sep/7/creepy-crawlies/",
+        "title": "Creepy crawlies",
+        "source": "Simon Willison"
+      },
+      {
+        "id": "4cb0e65a-e68b-4466-b083-b4f2caa876e9",
+        "url": "https://simonwillison.net/2026/Sep/7/jakub-pachocki/",
+        "title": "Quoting Jakub Pachocki",
+        "source": "Simon Willison"
+      },
+      {
+        "id": "4879863b-3823-4219-9d3a-b6988d1bf97c",
+        "url": "https://www.lesswrong.com/posts/xB8xGcTckEnsjgrCi/praise-our-lord-and-savior-glycine-how-opus-4-6-gifted-me",
+        "title": "Praise our Lord and Savior, Glycine: How Opus 4.6 gifted me The Vitamin",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "18d58139-a7b7-4109-8277-40d13fc3bbbe",
+        "url": "https://simonwillison.net/2026/Sep/7/video-compressor/",
+        "title": "Video compressor",
+        "source": "Simon Willison"
+      },
+      {
+        "id": "d22cbeaa-6cf1-4cb2-b314-72acfc38531e",
+        "url": "https://simonwillison.net/2026/Sep/7/equal-earth/",
+        "title": "Mercator ↔ Equal Earth",
+        "source": "Simon Willison"
+      }
+    ]
+  }
+}
