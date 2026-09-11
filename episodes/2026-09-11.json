@@ -1,0 +1,100 @@
+{
+  "day": "2026-09-11",
+  "title": "Ten thousand agents, one proof, and a credit fight",
+  "overview": "OpenAI claims a Navier-Stokes breakthrough, with a dispute over how it overtook academic work. A concept-prediction model reports training savings, while new proposals and public warnings sharpen the argument over hidden reasoning.",
+  "duration_s": 311,
+  "chars": 4588,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-11.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-11.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Friday the eleventh of September, twenty twenty-six. five twenty-two PM is brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Email us at hello at lab five twenty-two dot co dot uk if you think we can help your business. [pause]",
+    "[curious] Can smooth fluid motion develop an infinite velocity? OpenAI says ten thousand agents have solved that Navier-Stokes problem, a first AI-assisted Millennium Problem solution. Under a specially chosen smooth force, a vortex spirals inward and stretches, its central velocity growing without bound while energy stays finite. Extraordinary mathematics, if it survives scrutiny. Not a weather-forecasting revolution: Terence Tao cautions against that leap. [serious] But Understanding AI's Kai Williams also describes a credit fight. OpenAI began after rumours of an Anthropic effort. Mathematician Tristan Buckmaster says he then disclosed work with Levent Alpöge, an Anthropic employee working in his spare time; OpenAI pursued the same broad approach and reached the full result first. Buckmaster released rough drafts the night before OpenAI's announcement. He says OpenAI offered to merge efforts if its model got credit and Alpöge was excluded as co-author. Williams argues that spending millions to scoop academics breaks mathematical norms. Compute winning a race isn't itself misconduct. What I'd want established is precisely what was shared, and how it shaped the competing proof.",
+    "[short pause] Away from spending more compute, here's an attempt to need less. The N-C-P Team trains a model to predict concepts spanning several tokens alongside the next token. It groups its own internal representations into discrete codes, predicts future codes, then feeds them back into token generation. At eight point nine billion parameters, it matches OLMo-three-seven-B's final training loss using fifty-one point three percent of the tokens. [confident] Impressive headline; the fairer comparison matters more. Against an equally sized baseline, it approaches that loss with eighty-five percent of the computation. After full training, its downstream average beats OLMo by two point four five points. I'd read this one for the mechanism, not call it half-price training. These are the team's numbers, without outside replication.",
+    "[curious] Those internal representations raise another question: how much work can a model do before you get anything readable? Redwood Research proposes a measure called N-L-S depth, building on Google's opaque serial depth: the longest computational path without an interpretable checkpoint. In an ordinary transformer, that scales with layer count. Redwood's contribution is deciding what qualifies as readable. Tokens must retain meanings grounded in natural-language training, rather than become a new data channel; continuously passing hidden states through token-shaped machinery doesn't count. Ordinary post-training remains allowed. [confident] The useful bit is that you can assess this before training. It's an architectural warning light, not proof that the model's written reasoning is honest.",
+    "[long pause] Meanwhile, getting models to act doesn't always mean changing their internals: Show-Harness gives vision-language models discrete action commands, translated deterministically into robot movements, reporting control without robot-specific training for frontier models and adaptation in a few G-P-U-hours for small open ones. Code's available; its companion GUMI collects demonstrations through a graphical interface without teleoperation hardware. [short pause] Back on hidden reasoning, a further Astra test pads prompts with meaningless dots and demands immediate answers: the LessWrong post claims better reasoning than previous models, but gives no scores or named comparators here. And Redwood's separate disclosure proposal asks for externally verified depth reporting, including capable internal prototypes, alongside public monitorability evidence every six months or after major architectural changes; it also wants a published policy on latent reasoning, without requiring the architecture itself to be exposed.",
+    "[confident] Before borrowing that concept objective, compare actual compute at matched model size. And if readable reasoning is part of your safety case, ask what computation bypasses it. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "687fc4b9-9a57-47dd-a0ce-93bcabe1ed04",
+        "url": "https://thezvi.substack.com/p/jacob-coxon-warns-of-human-extinction",
+        "title": "Jacob Coxon Warns of Human Extinction and Triggers a Preference Cascade",
+        "source": "Don't Worry About the Vase"
+      },
+      {
+        "id": "55e1d89f-7417-40ba-8a9e-c0151b8ddb19",
+        "url": "https://thezvi.substack.com/p/the-extinction-risk-preference-cascade",
+        "title": "The Extinction Risk Preference Cascade: Quotes",
+        "source": "Don't Worry About the Vase"
+      },
+      {
+        "id": "ec79a087-2d53-4a30-b479-27c39b061c60",
+        "url": "https://www.lesswrong.com/posts/HGhrDWJngx2LX9TkF/so-where-s-this-ai-thing-going",
+        "title": "So where's this AI thing going?",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "60c46d9c-5d72-49b3-97dd-c5ff3b5c86d3",
+        "url": "https://www.lesswrong.com/posts/uvhuZHFtrgk8kNiZc/astra-is-much-better-at-reasoning-with-filler-tokens-than",
+        "title": "Astra is much better at reasoning with filler tokens than previous models",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "8e439c7a-a80c-4dfa-a6e8-8c1d50f0bc01",
+        "url": "https://www.understandingai.org/p/openai-spent-millions-to-solve-this",
+        "title": "OpenAI spent millions to solve this famous math problem — mathematicians are furious",
+        "source": "Understanding AI"
+      },
+      {
+        "id": "bf2f74da-8d45-46c6-bdfc-78d768da4df6",
+        "url": "https://blog.redwoodresearch.org/p/an-operationalization-of-opaque-serial",
+        "title": "An operationalization of opaque serial depth",
+        "source": "Redwood Research"
+      },
+      {
+        "id": "d9a6d5b6-cfe5-4445-8b04-a62fad509eaf",
+        "url": "https://blog.redwoodresearch.org/p/proposal-for-tracking-the-effects",
+        "title": "Proposal for tracking the effects of architecture on monitorability",
+        "source": "Redwood Research"
+      },
+      {
+        "id": "20817efc-1b8d-4bb5-9945-7065af39c38f",
+        "url": "https://www.lesswrong.com/posts/x8BvtWxtoajBGHS3g/an-operationalization-of-opaque-serial-depth",
+        "title": "An operationalization of opaque serial depth",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "8b8a44f2-42a5-4c7e-9af5-e758b6acabef",
+        "url": "https://www.lesswrong.com/posts/hLPGv8QjPcNLtDp3A/proposal-for-tracking-the-effects-of-architecture-on",
+        "title": "Proposal for tracking the effects of architecture on monitorability",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "df295f08-a470-4208-9d9e-83e0484eb21a",
+        "url": "https://www.alignmentforum.org/posts/x8BvtWxtoajBGHS3g/an-operationalization-of-opaque-serial-depth",
+        "title": "An operationalization of opaque serial depth",
+        "source": "Alignment Forum"
+      },
+      {
+        "id": "ef2b507f-e5a0-462b-a9ca-9b652940a993",
+        "url": "https://www.alignmentforum.org/posts/hLPGv8QjPcNLtDp3A/proposal-for-tracking-the-effects-of-architecture-on",
+        "title": "Proposal for tracking the effects of architecture on monitorability",
+        "source": "Alignment Forum"
+      },
+      {
+        "id": "2609.10522",
+        "url": "https://arxiv.org/abs/2609.10522",
+        "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.10715",
+        "url": "https://arxiv.org/abs/2609.10715",
+        "title": "NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction",
+        "source": "arXiv"
+      }
+    ]
+  }
+}

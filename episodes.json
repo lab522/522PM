@@ -1,5 +1,12 @@
 [
   {
+    "day": "2026-09-11",
+    "title": "Ten thousand agents, one proof, and a credit fight",
+    "duration_s": 311,
+    "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-11.mp3",
+    "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-11.md"
+  },
+  {
     "day": "2026-09-10",
     "title": "Learning from routing, trading losses and hidden reasoning",
     "duration_s": 311,
