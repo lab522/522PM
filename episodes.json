@@ -1,5 +1,12 @@
 [
   {
+    "day": "2026-09-12",
+    "title": "Open proofs, shell agents, and an undisclosed attack",
+    "duration_s": 315,
+    "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-12.mp3",
+    "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-12.md"
+  },
+  {
     "day": "2026-09-11",
     "title": "Ten thousand agents, one proof, and a credit fight",
     "duration_s": 311,
