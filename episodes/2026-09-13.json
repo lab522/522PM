@@ -1,0 +1,72 @@
+{
+  "day": "2026-09-13",
+  "title": "Proof bills, sharper depth, and worlds that remember",
+  "overview": "New compute figures put a price on OpenAI's Navier-Stokes run, while the data dispute remains unresolved. Researchers turn image generators into depth estimators and give video worlds persistent state. Open training stacks and a challenge to internet-takeover claims round out the episode.",
+  "duration_s": 369,
+  "chars": 4567,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-13.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-13.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Sunday the thirteenth of September, twenty twenty-six. five twenty-two PM is brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Email us at hello at lab five twenty-two dot co dot uk if you think we can help your business. [pause]",
+    "[curious] Friday's Navier-Stokes dispute now has a compute bill. OpenAI says all attempted problems consumed four point nine million messages and three hundred billion output tokens; Navier-Stokes alone took two point seven million messages and a hundred and thirty billion tokens. Zvi Mowshowitz estimates twenty-two million dollars at customer prices, several million internally. His estimate, not OpenAI's invoice. The stronger-than-Astra model ran for eighty-eight hours, with another seventeen for Astra's Lean formalisation and machine-checking. It solved the problem eight days after training began; separately, Zvi says OpenAI's next model got a generation ahead of Astra in a week.",
+    "[serious] The triggering rumour is now dated to September the first, and called false. On data, OpenAI says it can't rule out de-identified product usage helping its models. OpenAI's roon puts the chances of opt-in Codex data reaching that training at zero; Anthropic's Sholto Douglas calls user-data influence extremely unlikely. Those aren't identical assurances. Bubeck denies wrongdoing and says nothing was locked. Buckmaster now credits the underlying programme to Diego Cordoba and Luis Martinez-Zoroa, and says he's not accusing anyone of anything. [confident] I'd want the data lineage before treating confidence as closure.",
+    "[long pause] [curious] Away from proof-sized compute bills, can an image generator do useful work in one step? Estimating depth from one photograph is ambiguous, especially on unfamiliar scenes. Marigold version two repurposes diffusion transformers, image generators that normally refine an image repeatedly, to predict distance per pixel in a single pass. It uses reduced numerical precision where needed. The authors claim sixteen to twenty-six percent lower AbsRel — relative distance error — than the previous best on KITTI and E-T-H-three-D, including finer edges. No named rival or comparison score here, but HUAWEI Bayer Lab's code is available. [confident] This one I'd try on thin structures in your own camera feed. That's a more useful test than admiring the pictures.",
+    "And generating pictures has another snag: objects shouldn't cease to exist when you look away. Programmable World Model puts memory outside the video model. An agent converts instructions into executable rules; a lightweight engine maintains state, including off-screen objects. Three-dimensional boxes carrying that state, together with the camera path, guide the video generator. It's the renderer, not the authority on what exists. [curious] I like that separation. On the authors' own CombatStateBench, they report ninety-four percent count accuracy and ninety-eight percent state accuracy. Code's out, but there are no rival scores here. The design interests me more than a win on a test they wrote.",
+    "[short pause] That separation also helps you test design choices: OpenWAM releases a modular stack linking video knowledge to actions, with its alpha model pretrained on roughly six thousand four hundred hours of first-person human and robot data. Eight simulation benchmarks are mentioned, but no score or baseline. And for training plumbing, RadixArk's open Miles version zero point one separates sampling from training; its one case study reports a median step of two hundred and sixty-three seconds across thirty measured steps on sixty-four NVIDIA G-B-three-hundred GPUs.",
+    "[long pause] [serious] From what models can see to what they might control: Axios interprets Dario Amodei's essay as warning that rogue swarms could take over the internet within six months. Gary Marcus and security researchers Nathan Hamiel and Zack Korman call that vague and implausible on coordination and cost grounds; weak sites remain vulnerable, but settling the wider claim needs a defined takeover and a credible mechanism.",
+    "[confident] I'd test the released depth code before planning an integration. And check whether your monitoring could identify a large agent attack, rather than waiting for agreement on what counts as taking over the internet. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "de376b65-dc55-42c0-b39f-28ca35f2ddf6",
+        "url": "https://thezvi.substack.com/p/brand-new-ai-solves-a-millennium",
+        "title": "Brand New AI Solves a Millennium Prize",
+        "source": "Don't Worry About the Vase"
+      },
+      {
+        "id": "2e92c8c6-396c-40ef-a1f0-1a39eebb4515",
+        "url": "https://garymarcus.substack.com/p/could-rogue-agent-swarms-take-over",
+        "title": "Could rogue agent swarms take over the entire internet in the next six months?",
+        "source": "Gary Marcus"
+      },
+      {
+        "id": "2609.08084",
+        "url": "https://arxiv.org/abs/2609.08084",
+        "title": "Marigold V2: Revisiting Diffusion Transformers for Monocular Depth Estimation",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.08368",
+        "url": "https://arxiv.org/abs/2609.08368",
+        "title": "Miles v0.1: Production-Level Post-Training",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.10540",
+        "url": "https://arxiv.org/abs/2609.10540",
+        "title": "Programmable World Model",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.07398",
+        "url": "https://arxiv.org/abs/2609.07398",
+        "title": "OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.11929",
+        "url": "https://arxiv.org/abs/2609.11929",
+        "title": "SenseNova-U1.5: Towards Native Unified Visual Intelligence",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.07064",
+        "url": "https://arxiv.org/abs/2609.07064",
+        "title": "SpatialBlock: Enhancing Spatial Intelligence in LVLMs via Synthetic Block-Stacking Problem",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
