@@ -1,0 +1,77 @@
+{
+  "day": "2026-09-14",
+  "title": "Cheap jailbreaks, persuasive claims, and evaluators inside the labs",
+  "overview": "The UK AI Security Institute finds automated attacks against deployed safeguards, while a large persuasion study exposes a trade-off with factual accuracy. Anthropic commits to embedded evaluators, and new releases offer streaming interaction and tools for testing cyber agents.",
+  "duration_s": 327,
+  "chars": 4560,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-14.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-14.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Monday the fourteenth of September, twenty twenty-six. five twenty-two PM is brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Email us at hello at lab five twenty-two dot co dot uk if you think we can help your business. [pause]",
+    "[serious] A safety filter that tells an attacker only ‘blocked’ or ‘allowed’ still gives something away. The UK AI Security Institute's Boundary Point Jailbreaking uses that tiny signal to optimise a reusable attack prefix. It blends noise into harmful requests, gradually removes it, and searches for requests where small changes flip the filter's verdict. The institute says that's five times faster than the noise curriculum alone; random search failed even against basic filters.",
+    "[curious] Against Anthropic's Constitutional Classifiers, average harmful-answer scores rose from zero to twenty-five point five percent; additional prompting brought them to sixty-eight percent. Against GPT-five's input filter, the average was seventy-five point six percent. These were unseen biological misuse questions, scored for technical detail, not simply whether something got through. Search costs were roughly three hundred and thirty dollars and two hundred and ten dollars respectively, with hundreds of thousands of queries. Cheap search, not cheap research: the work took months. [serious] Details and code are withheld, so independent checking isn't possible; the institute says both labs verified its first-automated-attack claims and built specific mitigations. Its recommendation is monitoring across interactions, not merely patching individual filters. [confident] That's the part I'd take seriously: watch the search, not just its final request.",
+    "And getting past a filter isn't the only way optimisation changes behaviour. [curious] A separate institute study with four universities, published in Science, tested nineteen models with over seventy-six thousand people. Political agreement was measured before and after conversations, against a no-conversation control. Training on scored examples of persuasive conversations let a small model match or exceed larger frontier models. Personalisation shifted results by less than one percentage point; prompting for facts and evidence increased persuasion by twenty-seven percent over ‘be persuasive’. [serious] But those same levers reduced factual accuracy. I'd read this one. More fact-shaped claims aren't necessarily more truth, and we don't yet know whether people would voluntarily sustain these survey-style conversations.",
+    "That gap between what you feed a model and what you get back starts before deployment, too. The institute, working with Anthropic and the Alan Turing Institute, says as few as two hundred and fifty poisoned documents planted a backdoor in every model tested: four sizes, from six hundred million to thirteen billion parameters. A backdoor makes a trigger phrase activate unwanted behaviour. [curious] The surprising bit is the fixed document count, rather than a fixed percentage of training data. That's the institute's account, not independent confirmation, and it doesn't establish vulnerability at every size. Still, ‘our corpus is enormous’ looks less reassuring.",
+    "[long pause] [curious] For systems you can test yourself, Tencent Hunyuan's Gander supports continuous streaming interaction and interruptions, separating immediate conversation from deeper reasoning. Models and code are released alongside data, but its own human evaluations come with no benchmark score. And for agents doing security work, Feyospace's authors report sixty-three point two four percent verified success on CyberGym, tenth on its leaderboard, after training on execution-checked trajectories; their checkpoints averaged twenty-three point seven six percent improvement over starting models, without outside replication. To build tests yourself, the institute's new Inspect Cyber Python package separates evaluation configuration from infrastructure configuration and includes worked examples; its launch gives neither model scores nor a licence name.",
+    "[confident] I'd check whether your monitoring can connect repeated probes across requests before buying another filter. For embedded evaluators, keep an eye on the publication terms: an office badge isn't independence. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "653faac2-f7f3-4e15-bb32-088b2f6cc459",
+        "url": "https://thezvi.substack.com/p/we-must-pace-the-frontier",
+        "title": "We Must Pace The Frontier",
+        "source": "Don't Worry About the Vase"
+      },
+      {
+        "id": "9c7ba49f-c6d7-4b68-a09c-043c3c32d6a0",
+        "url": "https://www.aisi.gov.uk/blog/examining-backdoor-data-poisoning-at-scale",
+        "title": "Examining backdoor data poisoning at scale",
+        "source": "UK AI Security Institute"
+      },
+      {
+        "id": "a95b557e-ad22-4f62-a187-f40b0298212a",
+        "url": "https://www.aisi.gov.uk/blog/how-do-ai-models-persuade-exploring-the-levers-of-ai-enabled-persuasion-through-large-scale-experiments",
+        "title": "How do AI models persuade? Exploring the levers of AI-enabled persuasion through large-scale experiments",
+        "source": "UK AI Security Institute"
+      },
+      {
+        "id": "c607b771-ff8a-4649-a642-76fac0195a5a",
+        "url": "https://www.aisi.gov.uk/blog/inspect-cyber",
+        "title": "Inspect Cyber: A New Standard for Agentic Cyber Evaluations",
+        "source": "UK AI Security Institute"
+      },
+      {
+        "id": "b68c7df4-a502-4822-9548-4761c5e29b1f",
+        "url": "https://www.aisi.gov.uk/blog/boundary-point-jailbreaking-a-new-way-to-break-the-strongest-ai-defences",
+        "title": "Boundary Point Jailbreaking: A new way to break the strongest AI defences",
+        "source": "UK AI Security Institute"
+      },
+      {
+        "id": "ea4446de-bf88-443c-b04f-0f0ff54377e6",
+        "url": "https://www.lesswrong.com/posts/2vHsTtQF23TBNhvKX/consider-how-your-global-governance-proposal-is-different",
+        "title": "Consider how your global governance proposal is different from the EU Code of Practice",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "c963d618-d313-43a9-99a6-29179c4ea83b",
+        "url": "https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario",
+        "title": "Two cheers (out of three) for Dario Amodei",
+        "source": "Gary Marcus"
+      },
+      {
+        "id": "2609.08977",
+        "url": "https://arxiv.org/abs/2609.08977",
+        "title": "Omni Interaction Agent Technical Report",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.08418",
+        "url": "https://arxiv.org/abs/2609.08418",
+        "title": "Feyospace-v1: How the Cyber Mercury Seven Trained Frontier Cyber Models",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
