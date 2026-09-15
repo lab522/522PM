@@ -1,0 +1,59 @@
+{
+  "day": "2026-09-15",
+  "title": "Robot scores, open recipes, and hidden model reviews",
+  "overview": "PhysBrain claims strong physical understanding, but its robot-action evidence is thinner. Open training releases offer a chance to check ambitious claims, while Anthropic describes disrupted misuse and a US model-review framework remains mostly hidden.",
+  "duration_s": 291,
+  "chars": 4259,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-15.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-15.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Tuesday the fifteenth of September, twenty twenty-six. five twenty-two PM is brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Email us at hello at lab five twenty-two dot co dot uk if you think we can help your business. [pause]",
+    "[curious] Recognising what a robot could pick up isn't the same as picking it up. DeepCybo's PhysBrain one point five tries to close that gap by retraining a vision-language model to act and predict what happens next. It turns words and gripper motion into discrete sequences; future images get the same treatment. Everything's learnt by predicting the next token. Physical pre-training uses only human interaction videos, pairing recovered movements with subsequent observations. Fine-tuning adds robot trajectories and simulated experience alongside human demonstrations.",
+    "[confident] The eight-billion-parameter model averages seventy-two point five across twenty-eight embodied understanding benchmarks, with the best open-source results on fourteen, by the authors' count. They claim parity with leading proprietary models, but give no rival scores in their summary. [serious] And the action generation? Pictures, not performance numbers. The future-scene predictions are qualitative too. I'd take the understanding result seriously enough to test: code's published. But a benchmark about spatial relationships isn't a robot completing a job. That distinction carries rather more weight than the phrase ‘physical foundation model’.",
+    "[curious] Having something you can test matters just as much when the claim is efficiency. Z-G-C-M-one is a seven-billion-parameter model built to use tools rather than memorise the web, with a context window of two hundred and fifty-six thousand tokens. It alternates local attention with attention across the whole context, progressively extending that window during training. The authors claim roughly four point two times better time to reach a target training loss at sixteen-thousand-token context. Claims of competing with much larger models lack benchmark scores in their summary. [confident] The release is the interesting bit: weights from every stage, plus training code. Data recipes and training logs are out too. This one I'd read for the recipe, not the victory lap.",
+    "And once those tools start helping build the next model, how do you measure their contribution? Atria Dawn Preview trains on tool interactions in executable environments, with outcomes checked externally. Its authors claim the highest reported score on five of sixteen agent benchmarks, without naming any benchmark or giving a score in their summary. [curious] More revealing is their self-study: seven hundred and sixty-nine task records from fifty-six participants, alongside agent logs. Participants judged about a third of completed A-I-assisted tasks infeasible without A-I; humans still held most final decisions. That's a team's judgement about its own work, not a controlled productivity result. Code's public. I'd want a comparison group before buying ‘project-level partnership’.",
+    "[curious] Visibility's also the issue in the Astra filler-token experiment we mentioned on Friday. The new detail is randomised Boolean logic problems: the LessWrong author claims complex solutions without written reasoning, interpreting that as belief propagation — passing constraints between variables — but still supplies no accuracy figures or problem sizes in the summary. And outside the model, visibility isn't much better: Gary Marcus says Protect Democracy's freedom-of-information litigation yielded a hundred and thirty-two pages on the US frontier-model release-review framework, with almost everything substantive redacted; its lead counsel says litigation will continue and expects agreement on a production schedule soon.",
+    "[confident] If you're testing a robot model, set a real task before opening its benchmark chart. For the open training recipe, I'd check what the efficiency comparison actually held constant. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "6df6ac7d-0065-434e-86b9-d0964d28774c",
+        "url": "https://thezvi.substack.com/p/the-bad-guy-with-an-ai-named-claude",
+        "title": "The Bad Guy With An AI Named Claude",
+        "source": "Don't Worry About the Vase"
+      },
+      {
+        "id": "ff46c0a4-b921-400b-bf5b-6167047d38a2",
+        "url": "https://garymarcus.substack.com/p/breaking-secret-us-ai-evaluation",
+        "title": "BREAKING: Secret US AI evaluation framework has been partly revealed",
+        "source": "Gary Marcus"
+      },
+      {
+        "id": "4ebe7fea-b642-4fad-8571-eb0d917ba6cc",
+        "url": "https://www.lesswrong.com/posts/PAHqDoFrp9fybcSn2/astra-appears-to-perform-belief-propagation-like-inference",
+        "title": "Astra appears to perform belief-propagation-like inference without CoT",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "2609.13356",
+        "url": "https://arxiv.org/abs/2609.13356",
+        "title": "ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.15818",
+        "url": "https://arxiv.org/abs/2609.15818",
+        "title": "Atria Dawn: The Dawn of Agentic Superintelligence",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.14973",
+        "url": "https://arxiv.org/abs/2609.14973",
+        "title": "PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
