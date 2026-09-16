@@ -1,0 +1,66 @@
+{
+  "day": "2026-09-16",
+  "title": "Live video, poisoned examples, and memory worth keeping",
+  "overview": "Real-time video claims meet a shortage of measurements, while a backdoor study shows why counting poisoned examples isn't enough. Apple tests selective memory, Google launches voice models, and the politics of AI risk take another turn.",
+  "duration_s": 327,
+  "chars": 4652,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-16.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-16.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Wednesday the sixteenth of September, twenty twenty-six. five twenty-two PM is brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Email us at hello at lab five twenty-two dot co dot uk if you think we can help your business. [pause]",
+    "[curious] A gorgeous generated frame isn't much use for a live presenter if it arrives after the conversation's moved on. Tsinghua University's Vidu S two tackles that with two models: one generates an interactive avatar, the other edits a running video stream. Against S one, the avatar adds real-time seven-twenty-p output and references you can swap mid-generation. The authors also claim better instruction following, including dancing. The editing model can change clothing or replace a background, as well as restyle the feed or replace its character. Both get exploratory work on real-time spatial video too.",
+    "[serious] Here's the awkward bit: seven-twenty-p tells you the resolution, not the delay. The team says it beats every baseline, but names neither those baselines nor a benchmark, and gives no scores. That's not enough to judge a live system. [confident] What earns this a look is public code and a playable online demo. I'd try changing the reference halfway through an interaction and measure how long the change takes. A moving picture is evidence of something. Just not everything on the label.",
+    "[curious] Choosing what goes in can matter more than you'd think elsewhere, too. A backdoor study with Anthropic among its affiliations challenges tests that randomly pick poisoned fine-tuning examples — training data altered to plant unwanted behaviour. Across three settings on Llama three, eight billion parameters, attack success ranges from three to eighty percent just by changing which examples are poisoned; the model and poison count stay fixed, alongside the clean data. Their SAILS method learns to score sets from a few hundred training-and-evaluation runs, then ranks millions of candidates before checking a shortlist. It beats the strongest influence-based selectors, which estimate examples' effects, by thirty percentage points on average. [serious] One model, authors' own results, but I'd take the evaluation warning seriously: random selection isn't a worst-case audit.",
+    "[curious] And benign context can be badly chosen too. Apple's coding-agent memory keeps task specifications and data schemas, plus tool settings and output constraints, while dropping session-specific reasoning. On Apple's own account, three enterprise scenarios reach ninety-six percent completion, against seventy-nine without memory and seventy-one with full history. Keeping everything did worse than forgetting everything. [confident] I'd read this one for the architecture: generated programs are separated from runtime data, so refreshes need no model call. Apple reports fourteen-fold shorter task time and ninety-seven-fold lower per-invocation token cost than raw data injection; refresh also worked in twelve trials across four public datasets. Promising, but not independently confirmed.",
+    "[curious] From agents remembering work to agents talking through it: Google DeepMind has launched Gemini three point eight Live and Live Extended Thinking. Google says the latter reasons while speaking, narrating progress as background tasks run. Both support tool calls without stopping conversation and switching between ninety-seven languages. By Google's numbers, Extended Thinking leads Artificial Analysis' Speech to Speech Quality Index at eighty-two point six, with sixty-eight point six percent task completion on tau-Voice. [serious] On Sierra's tau-Voice banking benchmark, it's thirty-five point one percent. That's the number I'd keep beside any voice-agent plan. Both are available through the Gemini A-P-I and Google A-I Studio; the claim of competitive pricing arrives without a price.",
+    "[serious] Away from product claims, President Trump has called A-I taking over the world or destroying humanity a ‘hoax’. Zvi Mowshowitz retracts his earlier reading that Trump meant data centres, and urges people to keep the debate non-partisan; that seems sensible, but neither a presidential dismissal nor alarm settles the technical risk.",
+    "[confident] I'd test selective memory against your current transcript-replay setup before adding more context. For live systems, measure delay rather than trusting the word ‘live’. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "717a9ca8-8620-4e2b-8dbb-db65104aa5a5",
+        "url": "https://thezvi.substack.com/p/trump-goes-full-hoax-on-ai-existential",
+        "title": "Trump Goes Full Hoax on AI Existential Risk",
+        "source": "Don't Worry About the Vase"
+      },
+      {
+        "id": "ab4ebd39-b0f8-408a-b09c-2b82309168f0",
+        "url": "https://www.latent.space/p/ainews-jev-a-system-one-model-that",
+        "title": "[AINews] Jev: a “System One Model” that only decides/classifies/routes/scores — >100x faster, >200x cheaper than small frontier LLMs",
+        "source": "Latent Space"
+      },
+      {
+        "id": "4a014636-7af4-4490-84f3-28a0e108fd27",
+        "url": "https://machinelearning.apple.com/research/shared-selective-persistent-memory",
+        "title": "Shared Selective Persistent Memory for Agentic LLM Systems",
+        "source": "Apple Machine Learning"
+      },
+      {
+        "id": "e4a74842-b87c-4f19-ac7d-c43b14de0a98",
+        "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+        "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+        "source": "Google DeepMind"
+      },
+      {
+        "id": "2609.11638",
+        "url": "https://arxiv.org/abs/2609.11638",
+        "title": "Vidu S2: Real-Time Interactive, Editable, and Spatial Video Generation",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.14858",
+        "url": "https://arxiv.org/abs/2609.14858",
+        "title": "Dream-RSI: Recursive Self-Improvement through Evolving Worlds",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.15029",
+        "url": "https://arxiv.org/abs/2609.15029",
+        "title": "Pick Your Poison: Learning to Select Poison Sets for Stronger LLM Backdoor Attacks",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
