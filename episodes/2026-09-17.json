@@ -1,0 +1,65 @@
+{
+  "day": "2026-09-17",
+  "title": "Copying apps, filtering traits, and checking the swarm",
+  "overview": "A benchmark asks coding agents to rebuild software by using it, while new research tests hidden traits in training data and confidence drawn from past performance. Plus structured-data modelling, drug-repurposing hypotheses, and a missing control behind the agent-swarm headlines.",
+  "duration_s": 311,
+  "chars": 4472,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-17.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-17.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Thursday the seventeenth of September, twenty twenty-six. five twenty-two PM is brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Email us at hello at lab five twenty-two dot co dot uk if you think we can help your business. [pause]",
+    "[curious] ‘Make it work like that’ is a perfectly normal software brief. Coding benchmarks usually offer something kinder: written requirements. Microsoft Research's ProgramDistill makes agents interact with a working web app, infer its behaviour, then implement it in an incomplete version. The spec has buttons. You have to press them.",
+    "Its mine-craft-patch pipeline splits applications into features, links each behaviour to a known-correct patch, and checks it by replay. That produced four thousand and sixty-three tasks across twenty-six applications, without human intervention, from nineteen hundred and seventy-five verified behaviours. [serious] Across nine frontier agents, G-P-T six Astra achieved forty-nine point two percent success on cumulative workflows in full-app reconstruction; Claude Opus five reached twenty-eight point eight. Even the best didn't manage half. In partial reconstruction, increasing restoration depth from one to eight dropped their success from a hundred to sixty-four percent, and from ninety-six to thirty-two percent respectively. [confident] I'd read this one for the adjustable difficulty: you can investigate where inferring behaviour breaks down, rather than just collect a league-table position. These are Microsoft's own runs, not an independently reproduced result.",
+    "[curious] Behaviour can also be copied when nobody intended it. Helena Casademunt and colleagues, writing on LessWrong, replicate ‘phantom transfer’: traits passing through apparently innocuous fine-tuning examples. A twelve-billion-parameter Gemma three teacher answers open-ended questions while prompted to express a trait. They generate datasets for fifteen traits, then remove keywords and judge-flagged examples: G-P-T five mini gets three checks per prompt, with a Claude Sonnet judge added. A student with a different base model still acquires the trait. [serious] Their explanation is subtle meaning, not mysterious hidden statistics. Across three iterative filtering methods, transfer often survives; sometimes removing it means discarding most of the data. I'd take the defence warning seriously. Passing a judge isn't proof that a dataset has lost its influence.",
+    "And judging an answer isn't the same as knowing whether to trust it. [curious] Cambridge's XConf looks backwards: retrieve similar graded episodes at similar stated confidence, show the model its historical success rate, then ask it to identify recurring mistakes and revise its confidence. The records include lessons written after grading. Across nine benchmarks and four models, the authors match or beat ten-sample self-consistency — judging confidence by agreement across repeated answers — on twenty-three of twenty-four comparisons for distinguishing right answers from wrong ones. At a tenth of the answer-generation cost. [confident] That's the swap I'd test, if you've already got graded task histories. No weight updates needed. Calibration error also falls, but there's no independent evaluation yet.",
+    "[long pause] Those agents' explanations also raise a question about who's actually steering. Eliezer Yudkowsky argues on LessWrong that a model's talking part doesn't control its coding part, citing personal observations; that's a reason not to mistake reassuring narration for control, but I'd want controlled tests before accepting that internal picture. And on the Navier–Stokes result we covered on Sunday, OpenAI's Noam Brown now says he'd give multi-agent working less than ten percent of the credit: measured scaling stops at sixteen agents, with four the default. The single-agent comparison hasn't been run because experiments at that scale are too expensive. [serious] So the swarm's contribution remains unmeasured.",
+    "[confident] Before paying for more agents, I'd ask for the single-agent control on your own workload. And when testing confidence from experience, keep a separate set of graded tasks to check whether it really travels. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "34caf70c-c4ea-4af1-888d-8aab7a971487",
+        "url": "https://www.dwarkesh.com/p/noam-brown",
+        "title": "Noam Brown – Agent swarms, alignment, & recursive self-improvement",
+        "source": "Dwarkesh Podcast"
+      },
+      {
+        "id": "3d5c6100-5257-4620-b50c-0e09ad5008aa",
+        "url": "https://www.lesswrong.com/posts/cJX2ssssGoYqnijwi/the-talker-does-not-control-the-doer-in-current-ais",
+        "title": "The Talker Does Not Control The Doer (in Current AIs)",
+        "source": "LessWrong (curated)"
+      },
+      {
+        "id": "7d2487d7-8e93-4381-94c4-1f3f0b045718",
+        "url": "https://www.lesswrong.com/posts/NwfGDbRDLsaWpNazH/phantom-transfer-works-via-extremely-subtle-semantic-cues",
+        "title": "Phantom transfer works via extremely subtle semantic cues",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "2609.15938",
+        "url": "https://arxiv.org/abs/2609.15938",
+        "title": "HypoEvolve: Genetic Algorithms Enable Multi-Agent LLMs to Discover Scientific Hypotheses",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.17488",
+        "url": "https://arxiv.org/abs/2609.17488",
+        "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.17708",
+        "url": "https://arxiv.org/abs/2609.17708",
+        "title": "Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.18805",
+        "url": "https://arxiv.org/abs/2609.18805",
+        "title": "ProgramDistill: From Interactive Web Apps to Verifiable Reference-Guided SWE Tasks",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
