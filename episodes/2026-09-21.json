@@ -1,0 +1,65 @@
+{
+  "day": "2026-09-21",
+  "title": "Working code, working chemistry, and the compression catch",
+  "overview": "CodeMidas mines source code for agent training tasks, while Qwen tests whether agents can rebuild working applications. Plus open chemistry weights, faster tokenisation, and what compression can lose.",
+  "duration_s": 325,
+  "chars": 4631,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-21.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-21.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Monday the twenty-first of September, twenty twenty-six. [pause]",
+    "[curious] A repository doesn't need a lively issue tracker to contain useful work. That's the premise behind CodeMidas: training coding agents needs automatically gradable tasks, but harvesting issues and fixing commits limits what you can teach. Here, source code is the only task-specific input. Agents explore existing functionality and write behavioural specifications. They build tests against the original code, then filter tasks through execution checks and repeated attempts to solve them. [confident] That's the bit I'd inspect: whether the tests capture the behaviour, rather than just rewarding a plausible imitation. The pipeline produces five thousand five hundred and forty-five tasks from three thousand one hundred and eighty-five repositories, spanning twenty-three languages. Training one model with reinforcement learning, which rewards successful attempts, reportedly improves DeepSWE by eleven point seven percent and ProgramBench by seventeen percent. Terminal-Bench two point one gains eight point five percent. More high-quality tasks helped in controlled comparisons.",
+    "[serious] But those are changes without absolute starting scores, and only three of five benchmarks are named. One trained model, no replication. Promising task supply; not yet a dependable performance forecast.",
+    "[curious] And a plausible imitation is exactly what Qwen's RecreationWorld tries to catch. An agent gets a running application to explore, then must rebuild it without a prescribed workflow. The harness combines graphical control with coding across five platforms. Its held-out RecreationBench has two hundred and fifty tasks, with assertions checked against the reference application and by human reviewers. G-P-T-six Astra leads at fifty-eight point one percent overall, but passes every programmatic test on just two point eight percent of tasks. [serious] Static layouts come out better than interactions and computed results. I'd take that gap seriously: looking finished isn't being finished. The benchmark code is available; claimed training transfer has no named comparison or gain figure.",
+    "[curious] Working backwards from an existing result also turns up in chemistry, though here the goal is a recipe, not a replica. Retrosynthesis starts with a target molecule and works back towards simpler ingredients. Microsoft Research says its Nature-published RetroChimera combines a transformer that generates precursor molecules directly with a graph network that applies reaction templates. Learned votes rank their suggestions, adding support when both agree. [confident] Complementary weaknesses, rather than two copies of the same guess: that's the attraction. Microsoft says expert assessment found success on nine of ten challenging multistep targets, against five and four for the component models; another baseline managed two. Ten targets is small, and that's the lab's account. But implementation and weights are out under the M-I-T licence.",
+    "[curious] Keeping outputs intact gets harder when you shrink the model itself: Multiverse Computing treats block removal as a physics-style optimisation, accounting for how removal decisions interact, and claims almost twenty-three percentage points over the best competing block-removal method on the M-M-L-U knowledge benchmark at fifty percent compression of a large Llama instruct model. Its cheap scoring proxy isn't perfect. And compression can blur robot movements too: ActionPiece trains tokenisation to preserve which actions are physically closer to one another, reporting ninety-four point eight percent on LIBERO, but gives no competing tokenizer score.",
+    "[long pause] [serious] Beyond how models work, there's who controls their distribution. In prepared Congressional remarks, Nathan Lambert cites Chinese open-weight models' three point two billion Hugging Face downloads, roughly twice America's, arguing that restricting open software is impractical and ecosystem preparation matters more; download counts alone don't establish dependence, so I'd want evidence of actual deployment before drawing that conclusion. [confident] For something you can test tomorrow, benchmark the tokenizer on your own traffic. For the agent work, inspect a generated test before committing to a training run. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "d9420a47-d141-4dcf-b5fc-1e4707d27cd1",
+        "url": "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/",
+        "title": "Improving synthesis prediction of small molecules at scale with RetroChimera",
+        "source": "Microsoft Research"
+      },
+      {
+        "id": "ee348b16-0a33-4af5-afcc-48a85c071bf6",
+        "url": "https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an",
+        "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem",
+        "source": "Hugging Face blog"
+      },
+      {
+        "id": "d758f735-625a-4565-9464-8c6aac31c211",
+        "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+        "title": "The current balance of power in open models",
+        "source": "Interconnects"
+      },
+      {
+        "id": "e61b9d03-210f-470f-8cf0-c6d3aeb863c5",
+        "url": "https://huggingface.co/blog/tokenizers-v1",
+        "title": "tokenizers v1: encode, decode and scaling, measured",
+        "source": "Hugging Face blog"
+      },
+      {
+        "id": "2609.22000",
+        "url": "https://arxiv.org/abs/2609.22000",
+        "title": "RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.18487",
+        "url": "https://arxiv.org/abs/2609.18487",
+        "title": "ActionPiece: Rethinking Action Tokenization for Autoregressive Vision-Language-Action Models",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.22068",
+        "url": "https://arxiv.org/abs/2609.22068",
+        "title": "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
