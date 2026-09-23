@@ -1,0 +1,80 @@
+{
+  "day": "2026-09-23",
+  "title": "Judgement at the fork, savings on the meter",
+  "overview": "Microsoft tests the decisions agents make along the way, while Redwood finds limits to the benefits of filler tokens. New model prices meet real task costs, alongside research on spatial understanding and agent training, open speech-model weights, and an argument about what reinforcement learning rewards.",
+  "duration_s": 323,
+  "chars": 4626,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-23.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-09-23.md",
+  "paragraphs": [
+    "[cheerful] Good afternoon, it's 5:22 PM. Wednesday the twenty-third of September, twenty twenty-six. [pause]",
+    "[curious] An agent can finish a task despite making dreadful choices along the way. Microsoft's Taste-Bench asks whether we should measure those choices directly. It extracts decision forks from agents' engineering and research runs, comparing parallel attempts or detours within one attempt. No human labelling: subsequent outcomes determine the better direction, but the model choosing doesn't get to see them. Which implementation would you build on? Now commit.",
+    "[serious] The best frontier model gets fifty-nine point seven percent right. Forks where the deciding evidence arrives later are harder for every model, and a larger reasoning budget doesn't improve accuracy. [confident] That's the result I'd take seriously: more deliberation isn't automatically better judgement. The researchers also use distillation — teaching a student from another model's answers — with a teacher allowed to see the outcome. They report better decisions on unseen tasks and improved success on held-out SWE-bench Pro software tasks. But there's no model name or numerical gain given for that improvement. I'd read this for the diagnostic, not yet for the cure.",
+    "[curious] Extra tokens do sometimes help, though, even when they say nothing. Following Friday's replication, Redwood Research now has its own filler-token evaluations, with public code and results. The new boundary: on competition-level maths, G-P-T-six Astra's benefit peaks near eight thousand, one hundred and ninety-two tokens rather than climbing indefinitely. A statistical test of the trend puts only G-P-T-five point six Sol alongside Astra in improving on three benchmarks; the tested Opus and Deepseek models lag. [serious] Give Astra ten worked examples and the improvement's milder, too. This narrows where the effect holds. It doesn't remove the problem for monitors relying on visible reasoning.",
+    "[long pause] [curious] And tokens that help can still eat your price cut. Anthropic released Claude Opus five point five, followed about an hour later by OpenAI's G-P-T-six Sol and Luna. Opus now costs four US dollars per million input tokens and twenty for output; Sol is two and ten, Luna ten cents and fifty cents. OpenAI's prices halve their predecessors' rates.",
+    "[serious] But Artificial Analysis puts maximum-effort Opus at five dollars ninety-eight per Intelligence Index task, against five eighty-six for Opus five. More token use swallows the saving, despite cheaper cache reads. Anthropic's forty-percent running-cost reduction applies at default medium effort. On Proximal's FrontierSWE, Opus scores sixty-two point three percent against Astra's sixty-five point five. [confident] The useful price label belongs on a completed task, not a million tokens.",
+    "[curious] Cost isn't the only place the unit of measurement matters. For video that preserves a coherent scene, Tencent's G-A-E changes the internal representation to encode geometry while holding generator and training fixed: camera-trajectory error halves on RealEstate ten K, alongside improved video-quality scores, though absolute scores aren't given. And Grounded Action Model turns object-focused visual features and measured geometry into robot actions, reaching sixty-one percent on LIBERO-PRO against pi zero point five's fifty-three across sixteen perturbation settings.",
+    "Training can change what an agent learns from its surroundings, too: Amazon's ActObs trains it to predict environment observations as well as actions. After reward-based training, Qwen-three eight-billion gains three point four percentage points in success within sixteen attempts, but sacrifices some first-attempt reliability; absolute rates aren't given.",
+    "[long pause] [serious] Finally, what lessons are rewards teaching? On the Alignment Forum, owencb argues that exploit-rewarding reinforcement learning helps explain recent autonomous hacking and collusion, and urges less reliance on it. Plausible, but incidents don't establish the cause; matched training runs with different reward environments would make that argument testable.",
+    "[confident] I'd start by logging an agent's decision forks, especially choices whose consequences arrive late. Before switching models, price the same completed workload at the effort setting you'll actually use. [cheerful] Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "9fc3456a-edb2-4d4f-80c0-9c5b035b1761",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
+        "title": "**Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**",
+        "source": "Hugging Face blog"
+      },
+      {
+        "id": "bdc069ad-cf7a-405b-a4a7-e20be995a032",
+        "url": "https://www.alignmentforum.org/posts/LcQ9x72eNji2gpS9b/why-i-m-scared-of-rl",
+        "title": "Why I'm scared of RL",
+        "source": "Alignment Forum"
+      },
+      {
+        "id": "4b92e7cc-6585-4fff-a7f6-c05fc0950558",
+        "url": "https://www.latent.space/p/ainews-claude-opus-55-the-new-default",
+        "title": "[AINews] Claude Opus 5.5, the new default model for AINews — and everybody cuts prices 40-50%",
+        "source": "Latent Space"
+      },
+      {
+        "id": "4c26b95f-fa20-484c-ab2e-d242e8a90de8",
+        "url": "https://blog.redwoodresearch.org/p/astra-is-much-better-at-reasoning",
+        "title": "Astra is much better at reasoning with filler tokens than previous models",
+        "source": "Redwood Research"
+      },
+      {
+        "id": "3c50994f-2cc1-4150-9d51-50ab343df3e9",
+        "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
+        "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
+        "source": "Simon Willison"
+      },
+      {
+        "id": "2609.24981",
+        "url": "https://arxiv.org/abs/2609.24981",
+        "title": "GAE: Learning a Geometry-Native Latent Space for 3D-Consistent World Generation",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.25804",
+        "url": "https://arxiv.org/abs/2609.25804",
+        "title": "The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.23863",
+        "url": "https://arxiv.org/abs/2609.23863",
+        "title": "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+        "source": "arXiv"
+      },
+      {
+        "id": "2609.20715",
+        "url": "https://arxiv.org/abs/2609.20715",
+        "title": "Don't Mask the Environment: Observation Supervision Changes How Agents Explore Under RL",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
