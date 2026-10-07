@@ -1,0 +1,81 @@
+{
+  "day": "2026-10-07",
+  "title": "An opening cue, and a mountain of proofs",
+  "overview": "A study traces reasoning gains to a model's opening tokens, while OpenAI releases hundreds of maths manuscripts awaiting verification. A new benchmark separates experimental judgement from coding ability, alongside work on cheaper models and stronger agent checks.",
+  "duration_s": 304,
+  "chars": 4662,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-10-07.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-10-07.md",
+  "paragraphs": [
+    "Good afternoon, it's 5:22 PM. Wednesday the seventh of October, twenty twenty-six.",
+    "How much of a reasoning upgrade is knowing how to begin? UC Berkeley researchers fixed the opening of a base model's answer: a full stop, two line breaks, then “Okay”. On MATH five hundred, Olmo three's seven-billion-parameter model went from forty-two to seventy-eight percent correct on its first attempt. Qwen three, at fourteen billion parameters, rose from seventy-two to eighty-seven percent with “Alright,”. That's quite an expensive comma if you've been paying for training instead.",
+    "Their finding is that reinforcement learning makes these openings more likely; fixing them recovers much, not all, of its gain. The part I'd read closely is the intervention: changing training data made “chicken” an effective reasoning cue, or removed an existing cue's effect. That goes beyond finding a lucky prompt. Different openings also shifted refusal behaviour. It's two base models, with maths and coding tests, and no code link provided. Still, before crediting a training method with new reasoning ability, I'd want this control.",
+    "Getting an answer started is one thing. Establishing that it's right gets rather harder at the research frontier. OpenAI has released seven hundred and twenty-two maths manuscripts from an unreleased model, grouped into three hundred and seventy-two families, from roughly four thousand research problems. OpenAI puts average thinking compute at about three hours per result. Latent Space's roundup carries a qualified claim of ninety of the top five hundred open problems solved, including a Quasi-Riemann result. Extraordinary, if it survives. The notable claims aren't independently verified, and the model isn't available to reproduce the runs. The public proofs are the thing to inspect, not the victory speeches.",
+    "And choosing the right experiment matters before you have a proof to check. TasteVal, posted by Ollie J and danesherbs, separates experimental judgement from coding: the tested model designs experiments and interprets outcomes; a fixed coding agent runs them. Across eight AI research tasks, the baseline takes the best attempt per task from twenty-four experts. Opus five point five reaches their scores with a reported two point three-fold compute advantage. The authors estimate this efficiency has doubled every three months since December. I like the separation; I wouldn't extrapolate the curve. These are cheap, quickly verifiable tasks, and the human baseline excludes top researchers.",
+    "There's progress on the cost of running models, too: Carnegie Mellon's looped models reuse computation until internal states approach stable values, enabling a student model to process prompts up to one point seven nine times faster. At one point six billion parameters, a threefold smaller attention cache matches fixed-depth training's downstream average.",
+    "And for checking agents' work, Google's VeriHarness tests competing answers against environmental evidence rather than simply voting. Across five workspace benchmarks, evidence-backed revision gains six point two points over a single attempt with Gemini three point five Flash, and six point four with Claude Opus four point eight.",
+    "Changing behaviour without breaking the model is another matter: a MATS team trains synthetic-document edits on a base model, then adds the weight difference to its chat version. They tested this “grafting” across five model families up to two hundred and eighty-four billion parameters, but give no headline coherence gain.",
+    "For something deployable rather than experimental, Google DeepMind has released EmbeddingGemma two under Apache two point zero: seven hundred and forty million parameters mapping different media into a shared space for retrieval. Google says its code benchmark rises from sixty-eight point seven six to seventy-eight point six eight; that's the lab's own comparison.",
+    "Back to measured performance, NVIDIA says its released Nemotron three Ultra CC, paired with a generate-and-check loop, scored five hundred and thirty-five point four out of six hundred at the programming olympiad, above the top human score. It followed contest constraints, but NVIDIA explicitly calls the run unofficial and unsupervised.",
+    "I'd try the opening-cue control before spending on another training run. For the maths release, watch which proofs survive expert scrutiny rather than how many arrive. Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "d89a5553-99f0-404e-8f47-02c83a6af243",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
+        "title": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
+        "source": "Hugging Face blog"
+      },
+      {
+        "id": "0c9c520d-7747-4b7b-b4e2-1e57acc34d4c",
+        "url": "https://www.lesswrong.com/posts/CMWivoHeRNNErEykc/a-fascinating-case-of-an-llm-prompt-injecting-its-own-user",
+        "title": "A fascinating case of an LLM prompt-injecting its own user",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "5ebd213a-961c-47e8-8338-f1dab2fe7755",
+        "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai",
+        "title": "[AINews] Quasi-Riemann-Hypothesis: OpenAI publishes 722 math papers solving 90 of the top 500 open math problems; “the most significant moment” in >100 years of mathematics",
+        "source": "Latent Space"
+      },
+      {
+        "id": "a1a2b9b7-0b4c-40fd-be13-0668f5ab4e26",
+        "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+        "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+        "source": "Google DeepMind"
+      },
+      {
+        "id": "8c5ddc15-d025-4322-8f70-03bd813257af",
+        "url": "https://www.lesswrong.com/posts/bAGagjZAPgXEHmkAH/tasteval-measuring-the-experimental-research-taste-of-ai",
+        "title": "TasteVal: Measuring the Experimental Research Taste of AI Systems Against Human Experts",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "a59f8aa5-7e9a-4e48-afce-41403e2cc318",
+        "url": "https://www.lesswrong.com/posts/NvtLJ5nawJ6akWEqH/you-can-graft-sdf-changes-from-base-models-onto-post-trained",
+        "title": "You can graft SDF changes from base models onto post-trained models",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "2610.06833",
+        "url": "https://arxiv.org/abs/2610.06833",
+        "title": "Towards Looped Models Done Right, Part II: Rethinking at Fixed Points",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.06851",
+        "url": "https://arxiv.org/abs/2610.06851",
+        "title": "Base Models Can Reason By Taking a Cue From Training Data",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.00972",
+        "url": "https://arxiv.org/abs/2610.00972",
+        "title": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
