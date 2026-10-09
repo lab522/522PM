@@ -1,0 +1,72 @@
+{
+  "day": "2026-10-09",
+  "title": "A clearer window into the model",
+  "overview": "A new interpretability lens reads intermediate model variables more reliably, while Qwen targets the rounding mismatch that makes low-precision training difficult. There are fresh numbers on OpenAI's maths release, a challenge to Lean's foundations, and practical results on agent training and GPU infrastructure.",
+  "duration_s": 299,
+  "chars": 4664,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-10-09.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-10-09.md",
+  "paragraphs": [
+    "Good afternoon, it's 5:22 PM. Friday the ninth of October, twenty twenty-six.",
+    "Can you read what a model's holding in mind halfway through a calculation? Workspace lenses translate internal activations into words, but their readouts can be noisy. Kola Ayonrinde of Anthropic Fellows and Jack Lindsey of Anthropic trace part of that noise to averaged Jacobians — maps of how internal changes affect outputs. Their J plus plus Lens down-weights activation clusters that give poor readouts. It also changes how relevance flows backwards through the model, and strips punctuation and whitespace from the readout.",
+    "Across six open-source models, from nine to two hundred and eighty-four billion parameters, the correct intermediate variable appears among the top ten suggestions fifty-five point two percent of the time, versus thirty-five point seven for the original lens. In one worked example, it finds relevant variables at layer twenty-four rather than forty. That's one example, not a universal early-warning system. More convincingly, inserting its vectors into the model changes the answer as intended in fifty-nine point seven percent of trials, against forty-nine point three. I'd read this one: testing whether the supposed variable actually does something beats admiring a plausible label. Code and an evaluation harness are out.",
+    "Reading internal numbers is one problem; rounding them is another. Generating trial answers for reinforcement learning is expensive, so Qwen's TRACE uses four-bit floating point for weights and activations, including the cache of earlier token information. Aggressive rounding can make training and generation disagree. Instead of optimising each separately, TRACE uses generation-side rounding to guide training, caching selected information from deeper layers to contain overhead. On four mixture-of-experts models, which route work through selected parameter groups, the paper claims performance comparable to sixteen-bit generation and 'up to five point four times rollout speedup'. But there are no model names or accuracy figures in the abstract. Clever target; 'comparable' still needs a number.",
+    "And cheaper computation makes the next question sharper: what did that computation buy? Following yesterday's maths assessments, Zvi Mowshowitz's aggregation counts seven hundred and nineteen surviving OpenAI manuscripts in three hundred and seventy-two families. Three were withdrawn from the group without machine-checked Lean proofs. He reports one model, mostly one prompt, averaging three hours of compute per solution found after attempts at about four thousand problems. Steven Strogatz highlights a matrix multiplication exponent of at most two point two five, versus roughly two point three seven previously. That describes how work grows with matrix size, not a measured speedup: no practical case where it's faster has yet been found.",
+    "Which puts more weight on the checker. Milo Moses's latest Lean four argument goes beneath September's concern about bugs, to the logical foundation itself. He says there's no public proof of consistency relative to standard set theory, even with stronger infinity assumptions. A Lean three embedding was found flawed; Lean four adds further obstacles. The con-leche project proves consistency for its own checker, but rejects statements Lean four accepts, so it doesn't close that gap. Missing proof isn't proof of inconsistency. I'd want a consistency argument covering the actual rules before treating that substitute as a guarantee. Separately, Moses flags an unsandboxed comparison tool in Anthropic's Fermat formalisation: trusted mathematics doesn't make surrounding executable code safe.",
+    "For something you can actually download, Kandinsky six point zero Video releases three-billion and twenty-nine-billion-parameter models under MIT, producing five-second clips with synchronised audio and built-in upscaling to Full HD; its human comparison supplies no preference rates. Running shared hardware is less glamorous: Ai2 says every scheduled workload had reached HIGH priority, so it's replaced priority scheduling with funded GPU-time budgets and fair sharing — requests without budget lose protection from preemption. A priority queue where everyone's first. Lovely.",
+    "I'd try the released lens on a task whose intermediate steps you can check. Before buying a training speedup, measure the whole loop on your own workload. Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "1a78347d-e644-4f00-889b-d5dbd92cad23",
+        "url": "https://huggingface.co/blog/allenai/impactful-scheduling",
+        "title": "Impactful scheduling for GPU clusters",
+        "source": "Hugging Face blog"
+      },
+      {
+        "id": "71e29743-47bb-4254-afd9-88f2970cc6a1",
+        "url": "https://www.lesswrong.com/posts/zHhGa3iQBQcdSifFL/a-critical-look-at-lean4-1",
+        "title": "A critical look at Lean4",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "d579140a-baf8-4875-9555-e15025491847",
+        "url": "https://thezvi.substack.com/p/new-math-from-openai",
+        "title": "New Math from OpenAI",
+        "source": "Don't Worry About the Vase"
+      },
+      {
+        "id": "45f85a8a-ab36-4507-bf33-bb430ac43267",
+        "url": "https://www.lesswrong.com/posts/nc9dHfcB22JdMzGbr/paper-j-lens-jacobian-filtering-enables-more-faithful",
+        "title": "[Paper] J++ Lens: Jacobian Filtering Enables More Faithful Workspace Lenses",
+        "source": "LessWrong (front page)"
+      },
+      {
+        "id": "2610.08077",
+        "url": "https://arxiv.org/abs/2610.08077",
+        "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.08430",
+        "url": "https://arxiv.org/abs/2610.08430",
+        "title": "NeMo-DCR: Bit-Exact Delta-Compressed Refit for Scalable Agentic RL at Trillion-Parameter Scale",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.05608",
+        "url": "https://arxiv.org/abs/2610.05608",
+        "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.07767",
+        "url": "https://arxiv.org/abs/2610.07767",
+        "title": "TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
