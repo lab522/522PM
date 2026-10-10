@@ -1,5 +1,12 @@
 [
   {
+    "day": "2026-10-10",
+    "title": "The student gives the secret away",
+    "duration_s": 302,
+    "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-10-10.mp3",
+    "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-10-10.md"
+  },
+  {
     "day": "2026-10-09",
     "title": "A clearer window into the model",
     "duration_s": 299,

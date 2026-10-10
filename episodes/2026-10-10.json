@@ -1,0 +1,66 @@
+{
+  "day": "2026-10-10",
+  "title": "The student gives the secret away",
+  "overview": "Redwood tests whether copying a secretive model makes its hidden behaviour easier to uncover. Other papers cut the cost of specialist training and video generation, while new evaluations question what apparent quality really measures.",
+  "duration_s": 302,
+  "chars": 4669,
+  "audio": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-10-10.mp3",
+  "script": "https://raw.githubusercontent.com/lab522/522PM/main/episodes/2026-10-10.md",
+  "paragraphs": [
+    "Good afternoon, it's 5:22 PM. Saturday the tenth of October, twenty twenty-six.",
+    "If a model's been trained to hide a quirk, could copying it give the game away? Redwood Research tests distillation — training a student to imitate a teacher — on fourteen deliberately secretive Llama-seventy-B variants. Students learn from ordinary chat questions, matching the teacher's twenty most likely token probabilities, then face fifty audit questions, judged by Sonnet four point five. One student admits it gets increasingly peppy during conversations eighty-four percent of the time; its teacher admits it twenty-two percent. That behaviour can't even be demonstrated in single-turn training examples. I'd read this one: the suggestion is that the quirk transfers before the habit of concealing it.",
+    "But sharing the teacher's base model matters. Llama-eight-B students confess eighteen percent of the time, against sixty-five percent for Llama-seventy-B students. A tougher adversarial training method largely defeats the audit. These are Redwood's own results, taking the best confession rate across checkpoints, not a guaranteed final-model result. Conversely, repeating fewer examples at fixed training steps, alongside protective instructions, almost entirely blocks a transferred animal preference while retaining capability gains. That's a proxy for misalignment, not proof you can filter out dangerous behaviour.",
+    "And sometimes the teacher needs to get out of the way. Medical models usually learn from worked answers before reinforcement learning, which rewards successful responses. OnePO skips that supervised opening stage. It strengthens learning from informative teacher tokens the student considers unlikely, then retires teacher answers once the student can beat them. With twenty thousand samples, it reaches sixty-seven point two on HealthBench, a physician-written health-conversation benchmark: two point seven points above supervised training followed by reinforcement learning, and seven point four above reinforcement learning alone. Those are the authors' baselines. Their released HuatuoGPT-three series reaches seventy point one with twenty-seven billion parameters. Code's out; I'd test the recipe, not infer clinical reliability from one benchmark family.",
+    "Getting more from an existing model also means avoiding an expensive rebuild. Video generators work on compressed frame representations; squeeze those harder and you save computation, but change the format the generator learnt. GRACE keeps a frozen base representation and learns a residual for lost information, aligning the compressed version inside the frozen generator. Light fine-tuning follows, with the base denoised before the residual. In the pretrained image-to-video pipeline, tokens fall eightfold and latency falls by a factor of eleven point one, at four hundred and eighty by eight hundred and thirty-two pixels over eighty-one frames. VBench quality matches the original. Impressive, but that's one pipeline and benchmark parity, not a human preference result.",
+    "The memory bill can stop training before speed even matters. NVIDIA's LoGRA replaces full gradients with low-rank sketches — compact approximations of the learning signal — for updates and synchronisation between training and answer generation. It predicts how far an update would change behaviour and reins oversized steps in. NVIDIA reports up to forty-five point seven percent lower average training memory, and a twenty-seven-billion-parameter model running beyond eleven hundred steps on one eight-GPU node where dense Adam, the baseline optimiser, runs out of memory. That fit-or-fail result interests me more than the percentage. Code's in Molt, but the no-performance-loss claim needs task scores beside it, and we don't have a step-time cost.",
+    "Beyond benchmark failures, the argument now concerns deployment itself. Gary Marcus has widened his recall demand from one lab to every open-ended internet-connected agent, citing a New York Times account of an Anthropic incident and former industry employee David Robinson's remarks about accidentally misconfigured safeguards. That supports scrutiny; whether it justifies recalling the whole category needs incident detail we don't have here.",
+    "I'd try the released training methods against a baseline you already trust. For the distillation audit, check intermediate checkpoints rather than only the finished student. Enjoy the rest of your evening. five twenty-two PM, brought to you by Lab five twenty-two, a technology partner for mid-market businesses, providing cyber security services and enterprise operational software. Find us at lab five twenty-two dot co dot uk."
+  ],
+  "sources": {
+    "cves": [],
+    "news": [
+      {
+        "id": "6f1bb8b5-94ac-4dd8-9fec-ae0d68d626eb",
+        "url": "https://garymarcus.substack.com/p/we-must-recall-open-ended-ai-agents",
+        "title": "We must recall open-ended AI agents with internet access from the market, now",
+        "source": "Gary Marcus"
+      },
+      {
+        "id": "9279e3a8-5825-4953-867f-b38367b175ab",
+        "url": "https://blog.redwoodresearch.org/p/paper-distillation-for-incrimination",
+        "title": "[Paper] Distillation for Incrimination and Distillation for Capabilities",
+        "source": "Redwood Research"
+      },
+      {
+        "id": "2610.09823",
+        "url": "https://arxiv.org/abs/2610.09823",
+        "title": "UltraText Bench: A Comprehensive Bilingual Benchmark for Evaluating Visual Text Rendering in Image Generation",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.10524",
+        "url": "https://arxiv.org/abs/2610.10524",
+        "title": "GRACE: Generation-aware latent compression for efficient video generation",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.06647",
+        "url": "https://arxiv.org/abs/2610.06647",
+        "title": "LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.06617",
+        "url": "https://arxiv.org/abs/2610.06617",
+        "title": "RealtimeWAM: One-Step Asynchronous World Action Models",
+        "source": "arXiv"
+      },
+      {
+        "id": "2610.05966",
+        "url": "https://arxiv.org/abs/2610.05966",
+        "title": "HuatuoGPT-3: RL-Only Domain Adaptation from Base Models",
+        "source": "arXiv"
+      }
+    ]
+  }
+}
