@@ -1,0 +1,49 @@
+# Secrets and code flaws, the way elzec's help tells customers to scan
+# (docs/help/compliance/github-code-checks.md): on every push and pull request,
+# and weekly so a quiet repository is still checked. Each scan keeps its report
+# (with if: always(), so a scan that finds something still uploads it), which
+# elzec's GitHub tests read. Every action and image is pinned to a commit or
+# digest; the tag beside it is for reading.
+name: scans
+
+on:
+  push: {}
+  pull_request: {}
+  schedule: [{ cron: '17 6 * * 1' }]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scans-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      # Secrets anywhere in the history (gitleaks v8.30.1, MIT). --redact keeps
+      # the secret itself out of the report.
+      - run: >-
+          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
+          git /repo --redact --no-banner --report-format json --report-path /repo/gitleaks-report.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with: { name: gitleaks-report, path: gitleaks-report.json }
+
+  semgrep:
+    runs-on: ubuntu-24.04
+    # Semgrep CE 1.178.0 (LGPL-2.1): no account, and --metrics off keeps the
+    # code's details at home.
+    container: { image: "semgrep/semgrep:1.178.0@sha256:32e459968daabe7ab86968184a29109b9564aa00392401156f9788452b42786b" }
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: semgrep scan --config p/default --metrics off --error
+      - if: always()
+        run: semgrep scan --config p/default --metrics off --sarif --output semgrep.sarif
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with: { name: semgrep-sarif, path: semgrep.sarif }
